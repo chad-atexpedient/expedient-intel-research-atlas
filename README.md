@@ -29,7 +29,7 @@ The core narrative, historical chart, source disclosures, and a journal fallback
 
 ## Checks
 
-Use a current Node.js release with native ES module support (CI uses Node 24):
+Use a current Node.js release with native ES module support (Node 24 or newer recommended):
 
 ```sh
 node check.mjs
