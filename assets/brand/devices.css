@@ -1,0 +1,141 @@
+/* Expedient brand devices for HTML pages, one-pagers and slide artifacts.
+   Pair with assets/fonts/fonts-embedded.css. Colors and sizes are CSS variables so a
+   page can scale a device to its container without editing these rules.
+
+   Devices (Brand Book v1.6):
+   .exp-notch      Code Notch: Core Red L-notches on the top-right and bottom-left corners
+                   of a photo or callout. Content sits inside the notch margin.
+   .exp-xpframe    XP Frame: two Core Red L-brackets, top-right and bottom-left, set just
+                   outside a subject to frame it and imply expansion. Never crop it.
+   .exp-pattern-*  Digital Pattern: stepped squares aligned to one edge (background image).
+   .exp-accent     Hand-drawn accent (underline, arrow, circle, bracket, asterisk) in black.
+   .exp-filtered   Filtered-photo look in CSS for quick drafts; use scripts/filtered_photo.py
+                   for finals.
+*/
+
+:root {
+  --exp-red: #F20505;
+  --exp-black: #000000;
+  --exp-white: #FFFFFF;
+  --exp-charcoal: #323232;
+  --exp-steel: #646464;
+  --exp-smoke: #D2D2D2;
+  --exp-cloud: #F0F0F0;
+  --exp-fuchsia: #D30567;
+  --exp-gradient: linear-gradient(90deg, #F20505 0%, #D30567 100%);
+  --exp-sans: 'Inter', Arial, sans-serif;
+  --exp-serif: 'Instrument Serif', Georgia, serif;
+  --exp-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+}
+
+/* ---------- Code Notch ----------
+   --notch      arm length of each L (default 56px)
+   --notch-w    thickness of the L (default 12px)
+   Padding follows the brand rule: halfway along the notch's inner edge. */
+.exp-notch {
+  --notch: 56px;
+  --notch-w: 12px;
+  position: relative;
+  box-sizing: border-box;
+  padding: calc(var(--notch-w) + (var(--notch) - var(--notch-w)) / 2);
+}
+.exp-notch::before,
+.exp-notch::after {
+  content: "";
+  position: absolute;
+  width: var(--notch);
+  height: var(--notch);
+  pointer-events: none;
+}
+.exp-notch::before {
+  top: 0; right: 0;
+  border-top: var(--notch-w) solid var(--exp-red);
+  border-right: var(--notch-w) solid var(--exp-red);
+}
+.exp-notch::after {
+  bottom: 0; left: 0;
+  border-bottom: var(--notch-w) solid var(--exp-red);
+  border-left: var(--notch-w) solid var(--exp-red);
+}
+/* Code Notch on a photo: wrap the <img> in .exp-notch.exp-notch--flush */
+.exp-notch--flush { padding: 0; }
+.exp-notch--flush > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.exp-notch--flush::before, .exp-notch--flush::after { z-index: 2; }
+
+/* ---------- XP Frame ----------
+   --xp-arm     arm length (default 120px; about 30% of the subject's shorter side looks right)
+   --xp-w       stroke (default 6px)
+   --xp-gap     distance outside the subject (default 18px) */
+.exp-xpframe {
+  --xp-arm: 120px;
+  --xp-w: 6px;
+  --xp-gap: 18px;
+  position: relative;
+  box-sizing: border-box;
+  margin: calc(var(--xp-gap) + var(--xp-w));
+}
+.exp-xpframe::before,
+.exp-xpframe::after {
+  content: "";
+  position: absolute;
+  width: var(--xp-arm);
+  height: var(--xp-arm);
+  pointer-events: none;
+}
+.exp-xpframe::before {
+  top: calc(-1 * (var(--xp-gap) + var(--xp-w)));
+  right: calc(-1 * (var(--xp-gap) + var(--xp-w)));
+  border-top: var(--xp-w) solid var(--exp-red);
+  border-right: var(--xp-w) solid var(--exp-red);
+}
+.exp-xpframe::after {
+  bottom: calc(-1 * (var(--xp-gap) + var(--xp-w)));
+  left: calc(-1 * (var(--xp-gap) + var(--xp-w)));
+  border-bottom: var(--xp-w) solid var(--exp-red);
+  border-left: var(--xp-w) solid var(--exp-red);
+}
+
+/* ---------- Digital Pattern ----------
+   Put on an absolutely positioned element aligned to one edge. Set the url to the
+   SVG in assets/devices (or inline it as a data URI for portable files). */
+.exp-pattern {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+.exp-pattern--right  { top: 0; right: 0; bottom: 0; width: var(--pattern-size, 22%); background-position: right center; }
+.exp-pattern--left   { top: 0; left: 0; bottom: 0; width: var(--pattern-size, 22%); background-position: left center; }
+.exp-pattern--bottom { left: 0; right: 0; bottom: 0; height: var(--pattern-size, 18%); background-position: center bottom; }
+.exp-pattern--top    { left: 0; right: 0; top: 0; height: var(--pattern-size, 18%); background-position: center top; }
+
+/* ---------- Hand-drawn accent ----------
+   Inline the accent SVG (so stroke follows currentColor) and position it over the
+   word or number it marks. One accent per slide or page. */
+.exp-accent { position: absolute; color: var(--exp-black); pointer-events: none; }
+.exp-accent svg { width: 100%; height: auto; display: block; }
+.exp-accent--under { left: -2%; width: 104%; bottom: -0.28em; }
+
+/* ---------- Type pairings ---------- */
+.exp-impact { font-family: var(--exp-sans); font-weight: 800; letter-spacing: -0.02em; }
+.exp-impact em { font-family: var(--exp-serif); font-style: italic; font-weight: 400; letter-spacing: 0; }
+.exp-figure { font-family: var(--exp-mono); font-weight: 400; }
+
+/* ---------- Draft filtered photo (CSS) ----------
+   Black-and-white, black edge mask, brand color rising from the bottom.
+   --accent picks the glow color. Finals: run scripts/filtered_photo.py instead. */
+.exp-filtered { --accent: var(--exp-red); position: relative; overflow: hidden; background: #000; }
+.exp-filtered > img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15) brightness(.95); }
+.exp-filtered::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 45%, transparent 48%, rgba(0,0,0,.85) 100%);
+}
+.exp-filtered::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  background: linear-gradient(0deg, var(--accent) 0%, transparent 62%);
+}
+
+/* ---------- Legibility scrims for text on photos ---------- */
+.exp-scrim-white-left  { background: linear-gradient(90deg, #fff 0%, #fff 38%, rgba(255,255,255,0) 72%); }
+.exp-scrim-black-left  { background: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 35%, rgba(0,0,0,0) 72%); }
+.exp-scrim-black-bottom{ background: linear-gradient(0deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,0) 60%); }

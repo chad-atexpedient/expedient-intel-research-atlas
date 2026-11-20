@@ -1,0 +1,618 @@
+{
+  "snapshot": "2026-11-19T08:20:32Z",
+  "reviewedThrough": "2026-11-20T13:48:17Z",
+  "latestPublishedRevision": "456d16e87073e5056b49b4c3110bb66340112907",
+  "latestPublishedBranch": "fix/per-user-qualification",
+  "dateLabel": "November 19, 2026",
+  "repositoryRevision": "4329305c2e6bde40583bcaf998e68f3666eac549",
+  "model": "Qwen3.8-Flash-Next",
+  "comparison": {
+    "promptTokens": 1955,
+    "outputTokens": 512,
+    "requestsPerVariant": 3,
+    "statistic": "Median of three requests per variant",
+    "control": "Identical external Q8_0 Engram / PLE lookup table",
+    "caveat": "Screening result, not a service qualification. General quality equivalence is not established; Q4 has not been promoted.",
+    "source": "measurements",
+    "variants": [
+      {
+        "name": "UD-Q6_K_XL",
+        "prefill": 729.573,
+        "decode": 35.701,
+        "ttft": 2.759
+      },
+      {
+        "name": "UD-Q4_K_XL",
+        "prefill": 817.766,
+        "decode": 36.866,
+        "ttft": 2.469
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "measurements",
+      "title": "Matched Request Measurements",
+      "detail": "MEASUREMENTS-v2.md, real-text server measurements; q6_matched_q8 and q4_matched_q8 at 1,955 prompt tokens. Numeric repository export observed November 19, 2026 at 08:20 UTC."
+    },
+    {
+      "id": "methodology",
+      "title": "Controlled Methodology",
+      "detail": "METHODOLOGY.md and RESULTS.md, pinned model/runtime, comparison axes, quality gates, kernel controls, and Engram residency limitations. Repository revision 4329305. The November 20 research charter separates measurement validity, research findings and deployment eligibility; service regressions do not erase valid research trade-offs."
+    },
+    {
+      "id": "hardware",
+      "title": "Measured Research Platform",
+      "detail": "Repository README.md and EXPERIMENT-LOG.md: four Arc Pro B70 GPUs; 32,656 MiB reported physical GPU memory each; four 32 GB host DIMMs; Xeon w9-3475X; local NVMe. November 18–19, 2026 inventory."
+    },
+    {
+      "id": "session",
+      "title": "Later Research Session Updates",
+      "detail": "November 19, 2026 session follow-ups include native-context recall, deployment hold, corrected slot attribution and completed qualification, API-only builds and backend screens, and a later controlled tiny-probe idle-flush failure. Timestamped claims use separately dated reviewed records below through 17:51:27 UTC, including the corrected probe and unqualified full-model attempts. The speculative-screen source supersedes preflight-only status: activation and exact-output divergence stopped ranking/promotion. A later untimed installation/harness audit reports consistent binary/libraries/head hash but cannot rule out harness or comparison-method causes; it does not advance the 18:54:06 cutoff. oneDNN Q4 completion still has no reviewed numeric summary here. Session-only claims remain distinct from numeric exports. Later version6 diagnosis and trace salvage use separately reviewed records through21:44:51UTC. Session reports version7 probability capture running, with no reviewed outcome; it does not advance the cutoff. Later version7 probability capture completed; reviewed numeric evidence and22:05UTCstatus are separately scoped in probability-analysis. Broad source conclusions are not imported as independent quality/safety proof. Later 23:59:45UTC local status and private a7885ae publication report verified raw-trace backup, retained-span review and bounded MTP check passes, with strict two-user qualification running. Consult trace-review and quality-progress for scope; no final qualification or deployment is established. November 20 completed MTP evidence and dated corrections now supersede pending-status and resolved-clock claims; see research-audit and research-charter. Date-only audit/charter review does not imply a later measured timestamp. Later November20 published clock diagnostics complete through02:48:06UTC; scheduling progress is date-only and has no completed comparison. No model speedup is inferred from timing validation. Later completed screen and short-trace failure are reviewed through published04:57:17UTC confirmation-start status. Subsequent untimed source-session report says reference quality preflight stopped confirmation before candidate timing; not a new numerical export. Published d7ba82f now verifies the reference failure through04:59:53UTC. Subsequent five-probe quality diagnostics,traced timeout and active compatibility/comparative tests are untimed session observations,not reviewed new exports. Completed blocker outcomes are now published;latest source-session progress explicitly observed06:52:16UTC reports restarted confirmation,not results. See blocker-resolution and confirmation-progress. Local check-in13:48:17UTC now reports completed confirmation/four trace cases and restored baseline;new backup verification and independent request-level audit remain pending."
+    },
+    {
+      "id": "validation-v3",
+      "title": "Live Slot Attribution And Continuation",
+      "detail": "Local CONTINUATION-V3.md and the reviewed research session: final-response slot probe passed at 14:37:55–56 UTC on November 19, 2026; baseline restoration and arithmetic smoke passed at 14:38:31 UTC. This earlier probe is distinct from completed qualification observed at 17:09 UTC and the version-4 backend screens. The updated qualification is published on private branch e80645b, not main revision 4329305."
+    },
+    {
+      "id": "checkin-v3",
+      "title": "Diagnostic And Qualification Check-In",
+      "detail": "Local status record 2026-11-19T161719Z.json, observed November 19, 2026 at 16:17:19 UTC. Diagnostics finished at 15:46:30 UTC with restoration passed; 15,462 routing summaries, conservation passed, zero malformed JSON lines. Tiny probe verified four named positive-duration kernel events with B70 metadata. Corrected baseline validation: 6/6 paired rounds, 6/12 interference pairs, no terminal summary or winner. Backend packaging blockers are observations, not performance results."
+    },
+    {
+      "id": "context-export",
+      "title": "Later Local Long-Context Export",
+      "detail": "Local MEASUREMENTS-paused-validation.md, export observed November 19, 2026 at 15:15:27 UTC, supported by results/2026-11-19-paused-validation.json. The generated document contains an empty real-text section and a generic earlier filename label; only its explicitly populated long-context rows are used. The earlier compile-overlap warning remains attached. This is not a newer published GitHub export."
+    },
+    {
+      "id": "continuation-v4",
+      "title": "API-Only Build And Controlled Tracing",
+      "detail": "Updated local CONTINUATION-V4.md and later source-session observations, November 19, 2026. Guarded handoff passed about 17:04 UTC; Vulkan API-only build/device probe passed at 17:05:08, model regression at 17:06:10, stage/restoration at 17:27:42. oneDNN-enabled API-only build/device probe passed at 17:28:48. Updated continuation timestamps the original idle-flush failure at 17:35:53, the corrected controlled-probe pass at 17:41:25, and the final device-only correlation stop at 17:51:27 UTC. This earlier status is superseded by the timestamped trace-status record below: the corrected probe passed, followed by unqualified full-model attempts. No qualified request-correlated capture is claimed."
+    },
+    {
+      "id": "corrected-validation",
+      "title": "Completed Per-User Qualification Review",
+      "detail": "results/2026-11-19-corrected-validation-review.json, observed November 19, 2026 at 17:09:09 UTC; published on private branch fix/per-user-qualification, revision e80645b. Two users, 16,384 context tokens per slot; 36 requests per variant, 12 required user/slot/role groups with three observations each, uninstrumented. Both optimized controls passed accounting/slot checks but failed no-worse stall gates. Streamed gaps are content chunks, not guaranteed individual tokens; tail estimates are small-sample."
+    },
+    {
+      "id": "backend-screens",
+      "title": "Observed Backend Screening Requests",
+      "detail": "Local results/2026-11-19-backend-screens.json, observed November 19, 2026 at 17:32:37 UTC. Contains six uninstrumented requests each for Vulkan Q6, Vulkan Q4, and oneDNN-enabled SYCL Q6: three at 425 and three at 1,955 input tokens, all 512 outputs, 8,192 context, one user, b/ub 1,024, balanced layer layout with flash attention. Medians recomputed from the three 1,955-token requests. Vulkan Q4 uses the same external Q8 lookup table; Q6 uses its bundled table. The combined export is now confirmed in private branch revision 58881df, with bytes matching the reviewed local file. Its observed cutoff and medians are unchanged. These are screens, not final matched two-user backend qualification or proof every operation uses oneDNN."
+    },
+    {
+      "id": "trace-status",
+      "title": "Full-Model Trace Correlation Stop",
+      "detail": "Local status record 2026-11-19T175127Z.json, observed November 19, 2026 at 17:51:27 UTC, corroborated by updated CONTINUATION-V4.md and published private branch 58881df. Corrected controlled probe passed at 17:41:25. Initial full-model API/device output was truncated (59,173,490 bytes) with nonclean finalization; device-only eight-output attempt passed correctness, clean exit, valid JSON and four-device event checks but failed timestamp/request-window validation. Queue needs attention; baseline restoration passed at 17:49:54 with arithmetic smoke 42. No 8K or two-user GPU capture. Later report access timed out; no fresh-health inference. Raw traces were not backed up locally at this historical stop. Later sources token-diagnosis and trace-review record recovered kernel events, valid epoch timestamps, verified raw-file backup and retained-span findings; they do not establish complete-window coverage, a repaired validator, optimized deployment or a driver diagnosis. Correction, November 20: recovered epoch-like timestamps did not resolve active-window alignment. The saved-control audit finds an unexplained ~15.4-second first-event offset; no calibrated cross-device timeline is established. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap."
+    },
+    {
+      "id": "speculative-screen",
+      "title": "Exact-Model Speculative Screen",
+      "detail": "Local SPECULATIVE.md and results/2026-11-19-speculative-screen.json, November 19, 2026; now published on private branch revision 8a11af6, with published numeric bytes matching the reviewed local file. Record times: off control completed18:49:34, MTP n_max1 rejected18:50:39, n-gram rejected18:52:05 UTC. Local report records restoration18:52:40 and healthy baseline/supervisor-exited check18:54:06. Original Q6 target/Q8 PLE, one user,16K context,b256/ub128,layout A,greedy,cache_prompt=false,256 outputs/request. Off control12 requests: three each code/reasoning/prose/repetitive editing. Self-contained4,137,429,120-byte Q8 MTP head full SHA256 verified; activation/acceptance counters are diagnostics, not speed qualification. Rejected response text was not preserved; root cause unknown.38-file speculative-segment archive verified locally, excluding earlier GPU traces."
+    },
+    {
+      "id": "speculative-audit",
+      "title": "Later Installation And Harness Audit",
+      "detail": "November 19 source-session messages after the speculative publication, through the install-review response; no new observed-UTC status or benchmark timestamp supplied. Reports pinned binary/compiler and intended library/build settings consistent, full MTP-head hash matching, target shard sizes/GGUF headers checked but no full 169 GB target rehash. Missing rejected responses and strict cross-path text equality leave test-method causes unresolved. Newer local whitespace bug was reproduced but verified absent from the remotely used version. No installation changes, failed-arm reruns, new speed result or model-defect diagnosis. The audit is session evidence, separate from the published speculative numeric export. Later token-level diagnosis confirms sampled token-ID divergence; it does not prove the near-tie hypothesis or eliminate all harness causes."
+    },
+    {
+      "id": "token-diagnosis",
+      "title": "Token-Level Diagnosis And Read-Only Trace Review",
+      "detail": "Private branch fix/per-user-qualification revision6a9e8c3: results/2026-11-19-speculative-diagnosis.json (observed_epoch1795124578.2278612 = November19,2026,21:42:58UTC) matches reviewed local bytes. Local status2026-11-19T214112Z-diagnosis.json embeds observed_epoch1795124691.3177063 =21:44:51UTC; the embedded time, not filename, defines this review cutoff. Local SPECULATIVE.md and pinned diagnostic code establish six arms × three workloads, one96-output request/workload/arm,greedy,one user,16K,original Q6/Q8PLE,b256/ub128. Token indices are zero-based. Diagnosis blocks screening/ranking/two-user qualification/deployment; baseline restored/healthy in recorded status.73-file151,806-byte diagnosis-segment backup verified, excludes earlier raw GPU traces. Read-only trace review reports45,056/50,902kernel events across four B70 device tracks in epoch-microsecond domain, including device-only window17:49:28–32UTC. Earlier gate inputs were not logged; exact gate failure mechanism and repaired validation remain unverified. Historical pending status superseded by probability-analysis,observed22:05UTC; no speed or quality qualification implied. Correction, November 20: recovered epoch-like timestamps did not resolve active-window alignment. The saved-control audit finds an unexplained ~15.4-second first-event offset; no calibrated cross-device timeline is established. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap."
+    },
+    {
+      "id": "probability-analysis",
+      "title": "Bounded Target Logprob Capture And Reanalysis",
+      "detail": "Private branch c58b9a4, results/2026-11-19-near-tie-analysis.json matches reviewed local bytes. Analysis has no root observed timestamp; local status2026-11-19T220500Z-near-tie.json embeds observed_epoch1795125900=November19,2026,22:05UTC. Pinned protocol: off,MTP n_max1,n_max4; code/reasoning/prose; one96-output request per workload/arm,n_probs5,target pre-sampling top-five,greedy,one user16K,originalQ6/Q8PLE,b256/ub128. Nine diagnostic requests,not performance ranking. Both MTP arms share reported findings: reasoning zero-based0 top-two margins0.0048275off/0.0071201spec reversed; prose16 margins0.4208889off/0.1347598spec reversed; code identical96tokens. Threshold both top-two gaps<0.25logprob. Initial insufficient_probs was analyzer traversal bug in nested top_logprobs,fixed locally/reanalyzed saved data,no model rerun. Numeric observations do not alone prove global numerical safety,no defect,quality equivalence,all implementations inability to match,or any speedup. Baseline restored/smoke42; quality and strict two-user evaluation not run; no speculative deployment. Raw probability captures restricted locally,not copied into site; earlier rawGPUtrace backup was outstanding at that stage. The later trace-review and quality-progress sources supersede backup and quality-pending status, not these probability measurements."
+    },
+    {
+      "id": "trace-review",
+      "title": "Historical Trace Review / Interpretation Corrected",
+      "detail": "Private a7885ae published the initial trace review, supported by the November 19 23:59:45 UTC backup status. The 5,220,901-byte archive covers raw files of 59,173,490 and 36,210,281 bytes. November 20 SPECULATIVE.md corrections in fa7db61 supersede its interpretation: ~4-second event spans after start-paused loading do not establish ring-buffer loss. Epoch-like timestamps do not prove request-window or cross-device clock alignment. Initial reported nonoverlap and busy fractions are uncalibrated trace-coordinate observations, not validated GPU overlap, utilization or a scaling ceiling. Host-operation data are absent in the device-only file; copy labels do not prove physical routes. The reviewer subsequently extracted the earlier trace archive; old unextracted-status wording was stale. Raw artifacts remain excluded from this page. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap."
+    },
+    {
+      "id": "quality-progress",
+      "title": "Historical Bounded MTP Check Progress",
+      "detail": "Updated SPECULATIVE.md in private revision a7885ae matches local bytes. Local November 19 status observed_epoch1795132785.8658345 = 23:59:45 UTC reports all three one-user arms passed: speculation off, MTP maximum draft lengths 1 and 4. Reviewed mtp_quality.py protocol uses 16K context, regression, two arithmetic answers and one JSON exact-answer check, one exact label-recall check, then four 256-output-budget long-form structural checks per arm. Short-answer requests have 32-output budgets; these are protocol bounds, not newly exported measured counts. Long-form checks validate attributed/nonempty output and completion accounting, not semantic quality or equality. Strict two-user stage reported running: fresh off reference versus each MTP arm, 36 requests each planned, per-user/role latency and stall gates. No reviewed final two-user result or independent broad quality assessment; no speculative speed ranking or deployment. Progress report and protocol are not a completed per-request numeric export. This is historical progress, not current running status: the November 20 research-audit records all 108 two-user requests and both MTP service-gate failures. Bounded structural passes remain distinct from semantic correctness."
+    },
+    {
+      "id": "research-audit",
+      "title": "Completed MTP Requests And Trace-Control Audit",
+      "detail": "Private fix/per-user-qualification revision fa7db61: results/2026-11-20-research-audit.json and dated SPECULATIVE.md corrections match reviewed local bytes. Audit has no root observed timestamp. Latest explicitly timed event used here is documented baseline restoration/smoke November 20 at 01:08:04 UTC; this is not live health or the later audit time. A separate 1,824,195-byte v7/v8 evidence snapshot has 201 file hashes verified by the source workflow, including saved responses and trace-control metadata; large GPU traces remain in their earlier archive. All 108 requests audited: 36 per arm, 12 user/slot/role groups with three unique repeats each, two users/16K per slot, original Q6/Q8 PLE. Equal-start inputs 8,090 with 512 outputs; interference decoder 1,940/1,024 and other prefill 8,091/512. Aggregate workload-window rates off16.174336, MTP1 14.924081, MTP4 14.191930 tokens/s. Both MTP arms fail historical service eligibility and recovered per-group wall floor. Completion-request wall time starts after template application, not full-client timing. Rendered input-token hashes and token-arrival/burst timing were not saved. Device-only controlled active interval4.097622s; first event15.375497s after resume; earlier trace offset15.354292s. Clock/window discrepancy unresolved; no offset correction or cross-device clock guarantee. Date-only audit is reanalysis, not a new GPU run. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap."
+    },
+    {
+      "id": "research-charter",
+      "title": "Open-Ended Research Charter And Prepared Experiments",
+      "detail": "November 20 RESEARCH-PLAN.md and RESEARCH-EXPERIMENTS.md, published in private fa7db61 and matching local bytes, plus source-session clarification. Goal: discover, explain and extend the measured performance frontier, not manufacture a single deployment winner or claim an industry record. Separate measurement validity, research findings and deployment eligibility. Branches include scheduling, expert kernels, copies/collectives, parallel execution, arithmetic, attention/state, PLE/host memory, speculation, compiler/runtime/backend, and separately authorized drivers/physical routing. Prepared bounded clock-calibration, transfer/contention, matched-timeline and model-shape experiments are not installed, queued or executed. Source reports 76 local stdlib checks and byte-identical saved-data audit reproduction; no Linux installation, new handoff, SYCL compilation or new GPU test for that increment. Profiler-source lookup produced no readable report. Safety and correctness remain mandatory; system changes and deployment need separate approval. This preparation-only status is historical: later clock diagnostics completed and a separate scheduling screen is reported active. See clock-validation and scheduling-progress; other research branches are not implied complete. Later completed scheduling results and failed trace coverage are now separate sources; do not treat the historical active-screen note as current status."
+    },
+    {
+      "id": "clock-validation",
+      "title": "Clock-Domain Diagnosis And Native RAW Validation",
+      "detail": "Private revision7852409: results/2026-11-20-clock-calibration.json, results/2026-11-20-raw-clock-validation.json and CLOCK-CALIBRATION.md match reviewed local bytes. Profiler source pin887bba6e28ce84cc0d3813ef876e24add107c318. First experiment: two unchanged-profiler captures, eight active kernels/four GPUs each;16correct markers, paused phase absent, clean exit/valid JSON. BOOTTIME-derived epoch origin applied to RAW timestamps; sampled RAW-minus-BOOTTIME16.002456240–16.002478133seconds explains16/16marker displacements without the extra2ms tolerance. No timestamp rewriting. Buffer flushes at capacity, not drop-oldest ring. Initial probe missing-header compile failure occurred before capture; restoration passed; fresh-version include repair passed Linux build/64affected checks. Completed02:32:28UTC; recorded health02:33:31UTC. Verified305,074-byte archive/168file hashes; both analyses reproduced. Follow-up unchanged-binary raw-clock mode: two captures with10-second phase separation,16/16native RAW bracket matches without extra tolerance; correctness/paused exclusion passed. Completed/restored02:48:06UTC November20. Verified31,149-byte archive/37file hashes covers this completed stage only, not active scheduling results. Millisecond host brackets do not certify precise cross-device overlap, indefinite stability, or historical full-model traces. No driver/system-clock changes, model gain or deployment."
+    },
+    {
+      "id": "scheduling-progress",
+      "title": "Historical Scheduling Progress / Completed Audit Available",
+      "detail": "November20 LANDMARK-GOAL.md in private7852409 matches local bytes; source-session progress is separate from a final numeric export. Uninstrumented original-Q6/Q8PLE,greedy speculation-off,two users/16K per slot. Six configurations,forward then reverse order,12requests/configuration/pass with user/slot/role swaps:144requests planned if complete. Reference-to-balanced changes a bundle of placement,flash-attention and override controls; not one isolated cause. Within balanced arms,comparisons separately vary logical batch,microbatch,and continuous batching. First reference case reported12requests,valid accounting,16.0733aggregate workload-window tokens/s; no separate per-request export reviewed for that progress value. Candidates/reverse pass,independent confirmation,quality/trade-off audit and candidate backups pending. Source reports78local and65affected Linux checks plus probe build/handoff; not performance proof. New matched-timeline code is local preparation,not installed into the active queue. No landmark gain or deployment established. Superseded by scheduling-results: all144requests and both passes completed with verified134-file backup. Follow-up trace coverage failed; later untimed session reports independent confirmation stopped on reference preflight before candidate timing. See followup-blockers. The reference-quality failure is now published separately in d7ba82f; later blocker diagnostics remain session-only progress."
+    },
+    {
+      "id": "scheduling-results",
+      "title": "Completed Counterbalanced Scheduling Audit",
+      "detail": "Private revision85636e3: results/2026-11-20-scheduling-audit.json and SCHEDULING-RESEARCH.md match reviewed local bytes. Screen finished November20 at04:25:25UTC; report records fresh baseline health04:34:55UTC, not live health. Six configurations, forward/reverse,12requests per configuration/pass,144total,one observation per user/slot/role group per pass. Original Q6/Q8PLE,pinned runtime,two users16K per slot,greedy speculation off. Equal-start8,090input/512output; interference decoder1,940/1,024 and prefill8,091/512. Audited slot/output/token-event counts,submitted-prompt hashes,order and coverage. Aggregate forward/reverse tok/s: reference16.073/16.090; balanced b256/ub128 17.527/17.488; b1024/ub128 17.770/17.736; b1024/ub512 21.879/21.822; b1024/ub1024 22.378/22.429; no-continuous-batching b1024/ub128 19.269/19.362. Corresponding worst matched max-gap ratios1.000,1.017,3.659,1.989,2.008,0.499. No-continuous-batching has0/12overlapping emission pairs,server decode33.43–35.92tok/s and worst TTFT2.160times reference; other variants12/12emission-overlap pairs. Client overlap is not GPU overlap. Every case remains ineligible for service qualification. Verified4,492,782-byte archive/134file hashes; audit reproduced byte-for-byte in the source workflow."
+    },
+    {
+      "id": "followup-blockers",
+      "title": "Short-Trace Failure And Historical Confirmation Report",
+      "detail": "Private85636e3 short-trace-limitation JSON,SCHEDULING-RESEARCH.md and LANDMARK-GOAL.md match local bytes. One1.005s request-start capture:712,652bytes valid JSON,1,566classified copy events,zero classified kernels,two device metadata entries. Traced request1,937input/256output,TTFT11.066812s,wall18.202262s: diagnostic only. Leading untraced control and traced request completed; trailing control,remaining cases and confirmation did not run in that segment. Restoration04:49:16UTC,fresh health04:52:31UTC;156,662-byte failure archive/70file hashes verified. A separate confirmation-only continuation was observed active04:57:17UTC. Later untimed source-session messages supersede that running status: stronger scored preflight stopped on the unmodified reference at a FIFO scheduling check; response reported complete,not truncated; baseline restoration/smoke reported,no candidate timing. That initial session-only status is superseded by reference-quality-failure: published d7ba82f verifies the task error and restoration/health records through04:59:53UTC. Do not infer a candidate regression,pass or deployment. No prompts,generated answers or raw trace artifacts reproduced."
+    },
+    {
+      "id": "reference-quality-failure",
+      "title": "Verified Reference Task Failure Before Confirmation",
+      "detail": "Private d7ba82f: results/2026-11-20-reference-quality-failure.json, SCHEDULING-RESEARCH.md and LANDMARK-GOAL.md match reviewed local bytes. Unmodified original Q6/Q8 reference and pinned confirmation settings failed one scored FIFO scheduling preflight. The response ended normally after42completion tokens within256allowed; slot verified and oracle independently recomputed. No candidate or confirmation timing ran. A single task error is not general model-accuracy measurement or proof of its cause. Restoration/smoke04:58:20UTC; fresh baseline health/ownership recorded04:59:53UTC November20,not current live health. Source workflow verified36,913-byte archive and29file hashes. No generated answer arrays or prompts reproduced. This supersedes the earlier session-only failure status. Later research-only comparative scoring preserves this failure rather than removing the task. A new confirmation is running,not completed."
+    },
+    {
+      "id": "blocker-diagnostics",
+      "title": "Historical Blocker Diagnostics / Published Outcomes Available",
+      "detail": "Later November20 source-session messages after d7ba82f,without a reviewed new numeric export or observed timestamp. Reports traced prompt processing began~5.1s after task admission versus~62ms uninstrumented,after the original one-second collection window; timestamp-query warnings also occurred. Five bounded quality probes reported: two identical non-thinking requests failed with matching input-token hashes; explicit queueing wording failed; recurrence-assisted and thinking-enabled arms returned correct final answers under the same oracle. These change prompt/reasoning conditions and do not establish equivalence or a model-wide cause. A longer traced request exceeded its50s budget although the matched uninstrumented request completed in~1.72s; kernels and repeated timestamp-query warnings were reportedly collected,baseline restored. Not a qualified timeline,throughput comparison or verified new backup. Later comparative-quality and per-process event-compatibility tests are reported active; no reviewed outcome. Source reports85local/72Linux checks,not result qualification. Operational environment settings,raw text and token arrays excluded. Superseded by blocker-resolution: completed comparative scoring retains absolute failure;two compatibility switches failed and the legacy-adapter small-request workaround passed with45.25%wall overhead. Completed archives now verified;confirmation-progress is a distinct new run."
+    },
+    {
+      "id": "blocker-resolution",
+      "title": "Comparative Quality And Scoped Trace Workaround",
+      "detail": "Private456d16e: results/2026-11-20-blocker-resolution.json and BLOCKER-CAUSES.md match reviewed local bytes. Five bounded quality probes retain the original failure: two identical non-thinking requests failed; explicit queue wording failed; recurrence-assisted and thinking-enabled arms passed. Thinking used1,057output tokens/29.885764s versus42tokens/1.644098s for the incorrect non-thinking diagnostic,not an optimization ranking. Reference and balanced configurations both failed FIFO in the exercised comparative protocol; no scored regressions observed,absolute quality and deployment eligibility false. Default strict gates unchanged. Default complete-request trace timed out after50s with13timestamp-query errors; counter-event-disabled and legacy-launch tests also timed out. Already-installed legacy adapter selected for the diagnostic and both controls completed a warmed407-input/8-output request:51,248device events,50,142kernel events,four devices,zero profiler errors,valid JSON,RAW containment,no timestamp rewriting. Controls1.715338/1.709419s,traced2.487268s:wall ratio1.452522,TTFT ratio1.230548. Not original-adapter timing,precise overlap certification or model speedup. Exact original-adapter/profiler defect remains unisolated. Restoration06:21:36UTC,fresh recorded baseline check06:22:46UTC November20. Source workflow verified374,992bytes/112file hashes and3,146,892bytes/317file hashes;quality,trace/control and RAW-window analyses reproduced. New confirmation is outside these backups."
+    },
+    {
+      "id": "confirmation-progress",
+      "title": "Historical Confirmation Restart / Completion Now Reported",
+      "detail": "November20 LANDMARK-GOAL.md in private456d16e matches local bytes and records original-runtime confirmation active06:49:34UTC. Later source-session observation explicitly timed06:52:16UTC reports the first reference progressing,matching ownership and healthy resource reserves; this later session timestamp sets the review cutoff,not publication time. Reference → balanced b256/ub128 → ending reference,36measured requests each,three repeats in12user/slot/role groups:108planned if complete. Research scoring records absolute failures separately from candidate regressions;strict deployment remains false. After confirmation,the plan is matching-legacy-adapter RAW calibration and four diagnostic trace/control triplets. Queued is not completed. No new timing summary,concurrent-trace validation,final restoration or new evidence backup is reviewed. Original runtime for uninstrumented confirmation;legacy-adapter traces cannot represent original-runtime speed.85local/72affected Linux checks and guarded handoff reported,not outcome proof. Superseded by the local13:48:17UTC confirmation-checkin:108requests and four trace cases reported complete,restoration checked;raw backup verification and independent request-level audit still pending. Not a newer published numeric export."
+    },
+    {
+      "id": "confirmation-checkin",
+      "title": "Completed Confirmation And Trace Check-In / Audit Pending",
+      "detail": "Local status2026-11-20T134817Z-v18-checkin.json explicitly observed November20,13:48:17UTC,corroborated by source-session check-in. Compact read-only summary,not a raw-artifact backup or independent request-level reanalysis. Terminal heartbeat08:30:04UTC;all three model stages report restoration passed;baseline health/ownership and free locks checked at observation,not current live health. Confirmation complete:36requests per arm,108total,reference → balanced b256/ub128 → ending reference;original-runtime plan uses two users16K per slot and three repeats in12user/slot/role groups. Rates16.186381935/17.490845167/16.231774127aggregate tok/s;candidate7.7568–8.0590%above controls. Minimum group decode/wall ratios1.048518/1.047442;maximum TTFT ratio0.983191. Maximum matched max-gap ratio1.005044;gap-p95 ratio1.016830 versus ending reference. Known FIFO failure in both,no observed scored candidate regression,absolute quality and service eligibility false. Four legacy-adapter trace cases report calibrated RAW-window containment and zero profiler errors;event counts are device events,not kernel counts. Whole-request overhead is not per-window overhead;precise cross-device overlap uncertified. Raw backup not verified at this check-in. Later session reports a256-file,about10.2MBcompressed snapshot transferring,not locally hash-verified. Published branch remains456d16e with earlier evidence only;no new final audit export reviewed."
+    }
+  ],
+  "journal": [
+    {
+      "id": "confirmation-completed-checkin",
+      "date": "2026-11-20",
+      "category": "investigating",
+      "status": "Completion reported / raw audit pending / not qualified",
+      "title": "The Gain Repeats. The Service Gate Still Holds.",
+      "summary": "A local check-in reports all108confirmation requests complete and a7.8–8.1%aggregate gain;small gap regressions and absolute quality failure remain.",
+      "observation": "Observed13:48:17UTC November20,the compact local check-in reports36requests per arm,108total:reference16.186,balanced b256/ub128 17.491,ending reference16.232aggregate tokens/s. Candidate gains are8.0590%and7.7568%against the respective controls. The original-runtime plan used two users16K per slot,three repeats in12user/slot/role groups;the compact record does not enumerate request-level token bases. Minimum group decode/wall ratios versus both controls are1.048518/1.047442;maximum TTFT ratio0.983191. Maximum matched max-gap ratio1.005044,and gap-p95 ratio1.016830versus the ending reference. Both configurations retain the FIFO task failure,no new scored regressions are reported,and absolute quality/service eligibility remain false. Four legacy-adapter cases—single prefill,single decode,paired decode,decode during other prefill—report RAW-window containment and zero profiler errors. Device-event counts are51,248/40,863/30,207/16,762 respectively. Approximate whole-request overhead is45.7%,9.8%,4.4–4.5%and2.4–2.5%. All three model stages report restoration;the13:48check found the original baseline healthy/owned with supervisor exited.",
+      "limitation": "This is a local compact check-in,not published raw evidence or independent request-level reanalysis. Aggregate throughput is not per-user decode;three repeats per group do not establish robust tails. Small max-gap and p95-gap regressions still fail the strict service gate;no deployment or landmark result. Device-event counts are not kernel counts. Client phase labels and RAW containment do not certify exact GPU-user attribution or precise cross-device overlap. Whole-request overhead is not per-window overhead;instrumented timings cannot rank speed. Raw backup verification and request-level audit remain pending. A later session reports a256-file,about10.2MBarchive being transferred,not a verified backup. Recorded health is not a continuing live-health claim.",
+      "next": "Verify the completed raw archive and every included hash,then independently audit the108requests and trace/control evidence. Preserve quality and stall failures while using validated trace scope to choose the next hypothesis.",
+      "source": "confirmation-checkin",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "confirmation-restart",
+      "date": "2026-11-20",
+      "category": "investigating",
+      "status": "Historical running status / completion now reported",
+      "title": "Confirmation Restarts. The Quality Limit Stays.",
+      "summary": "The earlier run plan is superseded by a local completed-run check-in;qualification still fails and raw audit is pending.",
+      "observation": "Published run definition records confirmation active06:49:34UTC; a later source-session check at06:52:16UTC reports the first reference arm progressing with matching ownership and resource reserves. The plan is reference,balanced b256/ub128,ending reference:36measured requests each,three repeats across12user/slot/role groups,108requests if complete. Bounded quality scores precede each arm. Original runtime remains the timing control. Matching-adapter RAW calibration and four diagnostic trace/control triplets are queued afterward. Source reports85local and72affected Linux checks plus guarded handoff.",
+      "limitation": "These are run-definition and progress observations,not completed independent timing or a new gain. Planned requests are not completed samples. Absolute quality failures remain false and deployment is disabled. Larger/concurrent traces,final restoration and new raw backups are pending;previous verified archives do not cover future evidence. Legacy-adapter diagnostic timings cannot substitute for original-runtime measurements. The later local13:48:17UTCcheck-in reports completion and restoration,not a verified raw backup or independent audit.",
+      "next": "Use confirmation-completed-checkin for the newer reported outcome. Do not infer completed backup or request-level audit from queue completion.",
+      "source": "confirmation-progress",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "scoped-blocker-outcomes",
+      "date": "2026-11-20",
+      "category": "measured",
+      "status": "Scoped research fixes / absolute quality still failed",
+      "title": "A Usable Trace. An Honest Quality Score.",
+      "summary": "Comparative reporting now preserves wrong answers as failures; one small full-model request has an error-free diagnostic trace with measured overhead.",
+      "observation": "Five bounded probes: original non-thinking twice failed on identical rendered/input-token hashes; explicit queue wording failed; recurrence assistance and thinking mode passed the unchanged oracle. Thinking used1,057outputs/29.885764s versus42outputs/1.644098s for the incorrect non-thinking diagnostic. The actual reference/balanced quality comparison found FIFO failure in both arms and no scored candidate regressions;absolute quality remained false. Default tracing timed out after50s with13timestamp-query errors;disabling counter-based events and changing to the older launch API each also timed out. Selecting the already-installed legacy adapter for trace and both controls completed a warmed407-input/8-output request. It recorded50,142kernel events among51,248device events across four GPUs,zero profiler errors,valid JSON and RAW containment without timestamp rewriting. Untraced controls1.715338/1.709419s bracket traced2.487268s:45.25%wall overhead and23.05%TTFT overhead relative to control means. Restoration06:21:36UTC,fresh baseline check06:22:46UTC. Source workflow verified112and317file hashes across374,992-byte and3,146,892-byte archives and reproduced analyses.",
+      "limitation": "Both configurations still fail absolute quality;no observed regression is not correctness or broad equivalence. This is one task/mode diagnostic,not a general accuracy or numerical-root-cause finding. Trace coverage comes from a real model request but only407input/8output tokens with one control/trace/control triplet. It does not certify precise cross-device overlap,larger/concurrent coverage or the original adapter’s timing. Instrumented results are excluded from speed ranking. Neither failed compatibility switch is a fix. The exact original-adapter/profiler event defect and model’s original non-thinking error remain unresolved;no driver,model,profiler binary or system-clock replacement. Recorded restoration is not live health during later confirmation.",
+      "next": "Retain this small-request workaround and measured perturbation. Later four-case completion is reported separately in confirmation-checkin;larger/concurrent raw evidence still needs backup verification and analysis.",
+      "source": "blocker-resolution",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "blocker-diagnostic-progress",
+      "date": "2026-11-20",
+      "category": "investigating",
+      "status": "Historical session report / scoped outcomes now published",
+      "title": "A Better Diagnosis Is Not A Resolved Blocker",
+      "summary": "The earlier pending diagnostic report is superseded by published comparative scores,failed switches and a limited legacy-adapter tracing workaround.",
+      "observation": "Later untimed source-session reports describe five bounded quality probes. Two identical non-thinking requests reproduced failure with matching input-token hashes; explicit queueing wording still failed. A recurrence-assisted request and the original task with thinking enabled passed the unchanged oracle. Separately,trace logs reportedly place prompt processing~5.1seconds after admission versus~62milliseconds uninstrumented,beyond the earlier one-second window. A complete-request trace then exceeded its50-second budget while the matched uninstrumented request completed in~1.72seconds. Kernels were reportedly collected alongside repeated timestamp-query warnings; restoration passed. Comparative-quality reporting and a per-process event-compatibility test are now reported active,with85local and72affected Linux checks passed.",
+      "limitation": "At that historical stage,session observations were not a reviewed numeric export or independently reproduced analysis. Changed wording,recurrence assistance and reasoning mode do not establish quality equivalence,causal isolation or a general accuracy rate. The original failure stays a failure. Instrumented timeout and uninstrumented timing are diagnostic perturbation evidence,not a speed ranking. The later published record now verifies one small-request tracing workaround and completed backups,not broad trace coverage or a candidate gain. The earlier active follow-up is complete;new confirmation now has a local completed check-in,not an independent raw audit.",
+      "next": "Use scoped-blocker-outcomes for completed evidence. Absolute failures stay failures;the model error and exact original-adapter defect are not claimed repaired.",
+      "source": "blocker-diagnostics",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "reference-quality-stop",
+      "date": "2026-11-20",
+      "category": "measured",
+      "status": "Published task failure / no candidate confirmation",
+      "title": "The Reference Failed Before The Candidate Ran",
+      "summary": "The confirmation stop now has verified published evidence: a complete reference-model answer failed the independently recomputed oracle.",
+      "observation": "The unmodified Q6/Q8 reference failed one scored FIFO scheduling preflight under pinned confirmation settings. It ended normally after42completion tokens within256allowed,with verified slot attribution. The oracle was independently recomputed from saved evidence. No candidate or confirmation timings ran. Restoration/smoke passed04:58:20UTC; a fresh baseline health/ownership check passed04:59:53UTC. The source workflow verified the36,913-byte archive and all29file hashes. Published d7ba82f numeric failure record matches reviewed local bytes.",
+      "limitation": "This establishes one reference task error,not truncation,a candidate regression,general model accuracy or the underlying cause. No answer text,prompt or schedule arrays are reproduced. Recorded restoration is not current live health after later diagnostics. The original scored failure remains failed; no timing gain or deployment pass follows.",
+      "next": "Preserve this historical absolute failure. Later comparative scoring keeps it failed;confirmation is now reported complete but not service-qualified or independently raw-audited.",
+      "source": "reference-quality-failure",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "scheduling-screen-results",
+      "date": "2026-11-20",
+      "category": "measured",
+      "status": "Completed screen / trade-offs, not qualification",
+      "title": "More Throughput. Different User Experiences.",
+      "summary": "Two passes reproduce aggregate gains, but larger microbatches worsen stalls and no-continuous-batching serves token streams without overlap.",
+      "observation": "The screen finished04:25:25UTC:144requests,six configurations,12requests/configuration/pass in forward then reverse order,one observation per user/slot/role group per pass. Two users16K per slot,original Q6/Q8PLE,greedy speculation off. Equal-start8,090input/512output; interference1,940/1,024 decoder and8,091/512 prefill. Aggregate forward/reverse rates: reference16.073/16.090; balanced b256/ub128 17.527/17.488 (+8.7–9.0%); b1024/ub128 17.770/17.736 (+10.2–10.6%); b1024/ub512 21.879/21.822 (+35.6–36.1%); b1024/ub1024 22.378/22.429 (+39.2–39.4%); no-continuous-batching b1024/ub128 19.269/19.362 (+19.9–20.3%) tokens/s. Ratios use each pass’s reference. Worst matched max-gap ratios for those five candidates:1.017,3.659,1.989,2.008,0.499. No-continuous-batching has0/12overlapping token-emission pairs,despite33.43–35.92server decode tok/s; worst matched TTFT2.160times reference. Other variants have12/12overlapping emission pairs. Source workflow verified4,492,782bytes/134file hashes and reproduced the audit byte-for-byte.",
+      "limitation": "Aggregate workload-window rate is not per-user decode. Server decode excludes waiting before first output; serial service can raise it while delaying another user. Client emission-interval overlap is not proof of simultaneous GPU kernels. Two passes give only two observations per group,not reliable tails or broad quality. Reference-to-balanced changes placement,flash attention and override eligibility together,not one cause. Balanced b256/ub128 still has one1.7%max-gap regression; its clean reverse pass is not qualification. Larger batches reproduce the earlier~22.4tok/s frontier rather than establish a new landmark. Every case remains service-ineligible; no deployment.",
+      "next": "The later original-runtime confirmation check-in reports a7.8–8.1%aggregate gain with small stall regressions and absolute quality failure. Review its pending raw backup and request-level audit;do not overwrite this historical screen or relabel serial service as concurrent acceleration.",
+      "source": "scheduling-results",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "trace-and-confirmation-stop",
+      "date": "2026-11-20",
+      "category": "investigating",
+      "status": "Preserved trace failure / reference stop now published",
+      "title": "Preserve The Failure. Keep The Questions Separate.",
+      "summary": "The short trace collected copies but no kernels. A separate confirmation attempt later stopped on a scored check of the unmodified reference.",
+      "observation": "The first traced prefill window was approximately1.005seconds. Its712,652-byte JSON contains1,566classified copy events,zero classified kernels and metadata for two devices. The1,937input/256output request completed with11.066812s TTFT and18.202262s wall time—diagnostic,not a speed result. The leading untraced control completed; the trailing control and remaining trace cases did not. Restoration/smoke passed04:49:16UTC; fresh baseline check04:52:31UTC. All70file hashes in the156,662-byte failure archive were verified. A separate confirmation-only continuation was observed active04:57:17UTC. Later untimed session evidence reports its stronger scored preflight stopped on the unmodified reference at a FIFO scheduling check,with a complete response rather than truncation. The later published failure record now verifies that complete task error,restoration04:58:20UTC and fresh check04:59:53UTC; no candidate timing ran.",
+      "limitation": "No collected kernels does not mean no GPU computation. Window placement,first-use work and collector behavior remain competing explanations. No complete untraced/traced/untraced triplet or qualified full-model timeline exists from this attempt. The quality stop is now verified by a separate published numeric record and independently recomputed oracle. Later published outcomes validate a separate small-request legacy-adapter workaround but do not requalify this failed trace. It is not evidence of a candidate regression. Do not infer current live health from prior restoration. No failure was converted into a pass; no confirmed gain or deployment.",
+      "next": "Preserve both failures. Use reference-quality-stop for verified confirmation evidence and blocker-diagnostic-progress for later probes. Any comparative-quality path must keep absolute reference failures visible.",
+      "source": "followup-blockers",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "clock-domain-validation",
+      "date": "2026-11-20",
+      "category": "measured",
+      "status": "Diagnostic path validated / no model speed claim",
+      "title": "Fix The Measurement Before Claiming The Gain",
+      "summary": "Source-backed clock-domain diagnosis and native RAW-mode markers provide a bounded diagnostic path without rebuilding the profiler.",
+      "observation": "First experiment: two captures, four GPUs and eight active kernels each,16markers total; output checks,paused-phase exclusion,clean exit and JSON passed. The tested profiler applies a BOOTTIME-derived epoch origin to RAW timestamps. Independently sampled16.002456240–16.002478133second clock differences explain16/16displacements with no extra2ms allowance; unadjusted epoch markers matched0/16. Source confirms the4,096-event buffer flushes when full,not a drop-oldest ring. An initial missing-header build failed before capture and was preserved; restoration and a fresh-version include repair passed. A separate raw-clock-mode experiment then completed two captures with10-second phase separation:16/16native RAW matches without extra tolerance or timestamp rewriting. It completed/restored at02:48:06UTC. The source workflow verified305,074bytes/168file hashes for calibration and31,149bytes/37file hashes for raw-mode validation; both stages reproduced from saved evidence.",
+      "limitation": "These are tiny diagnostic probes, not full-model GPU timelines or throughput results. Millisecond-scale host brackets do not certify precise cross-device overlap or indefinite clock stability. Historical full-model traces were not corrected or requalified because matching clock samples were absent. The existing RAW mode is internal to this pinned profiler,not a portable interface guarantee. No profiler binary,driver or system-clock change; no model gain or deployment. The subsequent scheduling screen was active,so stage restoration is not current baseline-serving status. Its results are excluded from the completed raw-clock backup.",
+      "next": "Prefer the validated existing RAW mode over the deferred profiler rebuild. Bound drift and overlap resolution before matched model timelines; keep instrumented timing out of performance ranking.",
+      "source": "clock-validation",
+      "mechanism": "layout"
+    },
+    {
+      "id": "scheduling-screen-progress",
+      "date": "2026-11-20",
+      "category": "investigating",
+      "status": "Historical running status / completed results available",
+      "title": "A Reference Point Is Not A New Speed",
+      "summary": "The original reference-only progress note is superseded by the completed144-request audit and preserved follow-up failures.",
+      "observation": "The dated published report records the first12-request reference case at16.0733aggregate tokens/s with valid accounting,not a gain. The uninstrumented screen plans six configurations in forward and reverse order:12requests per configuration/pass,144requests if complete,two users/16K per slot,original Q6/Q8PLE,greedy speculation off and role/slot swaps. Original-to-balanced changes placement,flash attention and an override as a bundle. Balanced-arm comparisons separately vary logical batch,microbatch and continuous batching. The source session reports the first balanced case started; candidate/reverse results are not reviewed here. This was the earlier running status; the completed audit is now reported separately.",
+      "limitation": "The reference value is published progress narrative,not a reviewed final per-request export. One repeat per group per pass and two passes are screening,not reliable tail estimates or final qualification. Bundle comparison does not isolate placement alone; warmup and pass-order effects remain open. At that stage no new performance gain,landmark result or deployment was established. The later audit verifies both passes and the134-file screen backup. That earlier confirmation stopped on reference preflight. A later research-scored confirmation is running;independent timing,broad quality and deployment remain unestablished.",
+      "next": "Use scheduling-screen-results for measured trade-offs and trace-and-confirmation-stop for the subsequent blockers. Do not compare the earlier reference-only snapshot as though it were the completed screen.",
+      "source": "scheduling-progress",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "mtp-two-user-result",
+      "date": "2026-11-20",
+      "category": "measured",
+      "status": "Completed sample / both MTP arms slower",
+      "title": "Accepted Drafts Did Not Deliver A Two-User Gain",
+      "summary": "MTP-1 and MTP-4 lowered aggregate output rate in this workload and failed the recovered per-user wall-throughput floor.",
+      "observation": "The November 20 saved-data audit validates 108 requests: off, MTP1 and MTP4, 36 requests per arm across 12 user/slot/role groups with three unique repeats each. Two users,16K per slot,original Q6/Q8 PLE. Equal-start:8,090 input/512 output tokens; interference:1,940/1,024 for the decoder and8,091/512 for the other prefill. Aggregate workload-window rates were16.174 off,14.924 MTP1 and14.192 MTP4 tokens/s:7.7% and12.3% lower than off. Both MTP arms failed historical service gates; the original evaluator omitted the wall-throughput floor, but saved-response reanalysis finds both fail it too. Lowest group wall-rate ratios to off were0.903 and0.847. Draft acceptance was10,730/13,790 for MTP1 and15,748/35,036 for MTP4. The dated report records baseline restoration/smoke at01:08:04 UTC, not a new live-health check.",
+      "limitation": "Aggregate rate is total output over the workload window, not per-user decode speed. Completion-request wall time excludes template application; full-client and token-arrival/burst timing cannot be recovered. Workload fingerprints/counts match, not exact rendered token arrays. Three repeats per group are a screen, not reliable tail estimation. Structural/short-answer passes do not establish semantic quality. These settings are not a two-user improvement, not a universal rejection of MTP. No optimized deployment.",
+      "next": "Preserve the negative result and distinguish draft cost, verification, scheduling and timing-attribution hypotheses. Use independently scored quality cases and stronger measurement accounting before new comparisons; service ineligibility does not close the research branch.",
+      "source": "research-audit",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "trace-clock-audit",
+      "date": "2026-11-20",
+      "category": "investigating",
+      "status": "Historical discrepancy / tested clock path later diagnosed",
+      "title": "A Trace Needs A Clock We Can Defend",
+      "summary": "The earlier saved-control discrepancy led to bounded clock experiments; historical full-model alignment remains unqualified.",
+      "observation": "The November 20 audit uses a verified 1,824,195-byte snapshot with201 included file hashes checked by the source workflow, without executing its contents. Device-only collection was active for4.0976 seconds; reviewed event timestamps begin15.3755 seconds after recorded resume. The earlier incomplete capture shows15.3543 seconds of first-event offset and14.1495 seconds active collection. The ~4-second event spans follow a start-paused load/regression phase. The earlier assertion that a4,096-event ring dropped the first~45seconds is withdrawn: ring-buffer loss is not established.",
+      "limitation": "The clock/window discrepancy is real in the saved records; at this historical audit its cause and cross-device clock alignment remained unresolved. Later probes diagnose the tested epoch-conversion path, not historical full-model alignment. Do not repair timestamps by subtracting the observed offset or treat epoch-like values as proof the original gate was wrong. Earlier overlap/busy-fraction claims are uncalibrated trace-coordinate findings, not validated overlap or a universal scaling limit. Low recorded host-sync time does not rule out other host overhead; copy labels do not prove physical routes. The initial incomplete JSON remains incomplete. No new GPU capture was run.",
+      "next": "Use clock-domain-validation for the later source-backed diagnosis and native RAW-mode probe. Do not rewrite historical timestamps or claim fine-grained overlap from millisecond brackets.",
+      "source": "research-audit",
+      "mechanism": "layout"
+    },
+    {
+      "id": "research-frontier",
+      "date": "2026-11-20",
+      "category": "next",
+      "status": "Research charter / clock diagnostics now completed",
+      "title": "Explore The Frontier. Keep The Trade-Offs.",
+      "summary": "A deployable configuration is a possible outcome—not the organizing goal of this joint research.",
+      "observation": "The November 20 charter separates measurement validity, research findings and deployment eligibility. It keeps custom expert kernels, collectives, software routing, parallel execution, numerical formats, attention/state, host-memory placement, speculation and compiler/runtime work as research branches. Drivers and physical routing are also legitimate questions, with separate authorization and recovery requirements. Prepared specifications cover clock calibration, multi-size transfer/contention tests, matched workload timelines and model-shape kernel screens. Source reports76 local checks and byte-identical audit reproduction.",
+      "limitation": "Prepared is not installed, queued or executed merely by being specified. The later clock diagnostics completed and the separate scheduling screen completed; other branches remain distinct. Local checks are not Linux, compiler, hardware or performance validation. No custom kernel, driver or bridge-routing speedup is established. Software cannot create a missing physical interconnect. New speeds must be reproducible against a comparable measured control, not presented as an industry record or hardware maximum. Correctness and safety remain boundaries.",
+      "next": "Choose bounded experiments for their information value and measure competing explanations. Preserve gains and regressions across prefill, decode, latency, quality and resource use rather than force one winner. Deployment remains a separate explicit decision. Review completed clock evidence and the completed counterbalanced screen and its follow-up blockers separately; no landmark performance gain is established.",
+      "source": "research-charter",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "mtp-quality-progress",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Historical bounded checks / two-user outcome now available",
+      "title": "Passing Small Checks Is Not Service Qualification",
+      "summary": "Off and MTP lengths1/4 passed bounded one-user checks; the later completed two-user audit found both MTP arms slower.",
+      "observation": "The status embedded time 23:59:45 UTC reports three arms passed: speculation off, MTP n_max1 and n_max4. The reviewed one-user 16K protocol checks regression, two exact arithmetic answers, one exact JSON answer, one exact label recall, and four long-form workloads with 256-output budgets per arm. Short-answer requests have 32-output budgets. The long-form gate checks attribution, nonempty text and completion/timing accounting; it deliberately does not require output equality. The approved quality-based investigation is underway. At that historical status, two-user qualification was reported running, with a fresh off reference versus each MTP arm and 36 requests each planned.",
+      "limitation": "Pass status comes from the timestamped local status and matching published narrative, not a reviewed per-request quality export. Protocol budgets are not observed output counts. A handful of exact answers and structural checks do not establish broad reasoning, prose/code correctness, quality equivalence or numerical safety. The subsequent November 20 audit records both MTP service-gate and recovered wall-floor failures. No qualified MTP speedup or deployment is established; deployment is not automatic.",
+      "next": "Use the completed MTP audit for the outcome. Strengthen objective quality and measurement checks without relabeling structural passes as semantic equivalence.",
+      "source": "quality-progress",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "trace-retained-review",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Historical review / clock and buffer interpretation withdrawn",
+      "title": "Four GPUs. A Four-Second View.",
+      "summary": "The archive is verified; the original overlap and missing-event interpretation is superseded by the November 20 control-time audit.",
+      "observation": "The November 19 23:59:45 UTC status records archive/index verification:5,220,901 compressed bytes, raw files59,173,490 and36,210,281 bytes. The initial review reported0.00 ms overlap for all six device pairs,82.6–82.9% exactly-one-device busy and grouped GEMM up to367.8ms in ~4 seconds of trace-coordinate data. Its claim that a4,096-event ring dropped early events from~50-second windows is withdrawn. The November 20 control audit finds a start-paused phase and unresolved ~15.4-second timestamp offset.",
+      "limitation": "These historical values are not validated cross-device overlap, utilization or request critical-path timing. They do not prove GPUs never overlap or explain two-user stalls. Ring-buffer loss is not established. The device-only file has no host-operation events: host analysis is unavailable, not zero. Summed kernel durations are not request wall time; copy events do not prove physical PCIe routes. Backup integrity does not validate clock mapping. No new capture or long-context/two-user timeline is established. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap.",
+      "next": "Use the newer trace-clock-audit correction. Calibrate clocks and verify collection semantics before interpreting overlap; keep animations conceptual.",
+      "source": "trace-review",
+      "mechanism": "layout"
+    },
+    {
+      "id": "probability-findings",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Captured reversals / later bounded checks reported",
+      "title": "One Near-Tie. One Wider Reversal.",
+      "summary": "The sampled target probabilities distinguish a close reasoning reversal from a wider prose shift; neither is a deployment pass.",
+      "observation": "The22:05UTC status records completed diagnostic capture for off,MTP draft lengths1and4 across code,reasoning and prose:one96-output request per arm/workload,nine requests,n_probs5,greedy,one user16K,originalQ6/Q8PLE,b256/ub128. At zero-based reasoning token0,the same top-two candidates reversed with logprob gaps0.0048275off/0.0071201MTP on both draft lengths. At prose token16,the candidates reversed with gaps0.4208889off/0.1347598MTP; this is not near-tie under the fixed both-gaps<0.25criterion. Code remained token-identical through96outputs. Initial insufficient_probs was an analyzer bug:top_logprobs was nested; saved complete captures were reanalyzed after a tested local fix,no model rerun. Baseline restoration/smoke42 is recorded.",
+      "limitation": "This is bounded diagnostic evidence,not a speed result or broad quality evaluation. Close reasoning candidates explain that sampled argmax sensitivity; the prose reversal is wider. Captured margins are consistent with path-dependent numerical shifts but do not isolate every implementation/harness cause or prove MTP universally defect-free,numerically safe,quality-equivalent,or impossible to make greedy-identical. The source calls the prose change about0.29by subtracting unsigned gap magnitudes; because the preferred candidate reverses,the signed pairwise preference changes by about0.55565logprob. No generated words or token IDs are reproduced here. At this historical 22:05 status, MTP quality and two-user evaluation had not run. The later completed two-user audit reports both MTP arms failed service and wall-floor gates; no deployment. November 20 stricter saved-data analysis reproduces the probability observations, not their cause; the0.25threshold is a heuristic, not a safety tolerance.",
+      "next": "Keep the reproduced probability observations and signed-margin caveat. Add capture-parity controls and objective quality checks; do not turn distribution differences into proof of harmless numerics or promotion.",
+      "source": "probability-analysis",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "token-divergence",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Token divergence confirmed / screening blocked",
+      "title": "The Tokens Differ. The Cause Still Needs Evidence.",
+      "summary": "A fresh off server reproduced the baseline; all three MTP draft lengths diverged at the same sampled positions.",
+      "observation": "The diagnosis summary observed21:42:58UTC tested six arms: off, a fresh off-repeat server, MTP maximum draft lengths1/2/4, and ngram-simple4. Each arm made one96-output request for code,reasoning and prose:18 diagnostic requests,one user,16K context,original Q6/Q8PLE,b256/ub128,greedy. Off-repeat token IDs matched off on all three workloads. Every MTP length matched code through96tokens but diverged at zero-based token0 on reasoning and16 on prose. N-gram matched code/reasoning at this depth and diverged at prose token94. The final status embedded time21:44:51UTC records completed diagnosis, auto-blocked screening, and restored healthy baseline/smoke42.",
+      "limitation": "This establishes sampled token-ID divergence,not a speed result or semantic-defect diagnosis. The later probability capture now measures a close reasoning reversal and wider prose reversal on MTP lengths1/4,but that does not by itself prove global quality,numerical safety or complete causal attribution. One request per workload/arm and96outputs do not establish general determinism or quality; earlier256-output failures remain separate. No two-user qualification or deployment.",
+      "next": "Use the newer bounded probability findings and completed two-user audit. Structural quality and slot-dependent timing do not establish a causal mechanism; stronger checks are prepared, not remotely run.",
+      "source": "token-diagnosis",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "trace-salvage",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Historical salvage / alignment conclusion corrected",
+      "title": "Recovered Records Still Need Clock Validation",
+      "summary": "Event records were recovered, but the November 20 audit does not support the earlier resolved-clock conclusion.",
+      "observation": "The November 19 read-only review reported45,056 and50,902 kernel-event records and epoch-like timestamps. Its conclusion that the clock was valid and only the harness gate was at fault is withdrawn by the November 20 saved-control audit: event times do not align with the recorded active interval. The initial API/device attempt remains truncated/nonclean.",
+      "limitation": "No new capture was made. The exact rejection mechanism and a repaired validator are not established. Later evidence records verified local backup of both raw files, but backup does not establish active-window or cross-device clock alignment. Ring-buffer loss is not established; see the newer control-time audit. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap.",
+      "next": "Log validation inputs and verify the line-based parser/window checks against preserved artifacts before any separately authorized new capture. Preserve incomplete-attempt provenance and obtain bounded long-context/two-user coverage without importing profiler timing into speed ranking.",
+      "source": "token-diagnosis",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "speculative-install-audit",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Audit consistent / cause unresolved",
+      "title": "Check The Test Before Blaming The Model",
+      "summary": "Installation checks were consistent; missing response evidence and comparison-method limits still leave the divergence unexplained.",
+      "observation": "Later November 19 source-session audit reports that the installed binary identifies the pinned 2cbfc3c revision and IntelLLVM 2026.1, intended build/oneAPI/Level Zero libraries resolve, and SYCL ON/F16 ON/oneDNN OFF settings match the baseline. The MTP head's full hash matched its pinned artifact, and all six target shards had expected sizes and GGUF headers. Archived launch settings used the same target, context, cache policy and greedy sampler. The four speculation-off workloads each produced one distinct output hash across three repeats. A whitespace-comparison inconsistency was reproduced in newer local harness code, but the installed version stripped both sides, so that specific bug did not cause the recorded long-form mismatch.",
+      "limitation": "This is an untimed source-session audit, not a new benchmark or a clean bill of health for the harness. The 169 GB target shards were not fully rehashed. Rejected response bodies were lost in the first run. Strict text equality across different verification batch/state paths alone cannot diagnose an MTP defect; formatting, numerical differences, sampler/rollback behavior and test-method errors remain unresolved. Off/off repeatability is not proof of cross-path bit identity. No installation change or failed-arm rerun was made during the audit, and no speedup or speculative deployment is established.",
+      "next": "The subsequent token diagnostic now confirms sample token-ID divergence, not only text formatting. Review the newer token-divergence evidence and bounded probability follow-up without treating pattern alone as a proven model defect.",
+      "source": "speculative-audit",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "speculative-outcome",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Output divergence / promotion held",
+      "title": "Active Drafting Showed Unexplained Output Divergence",
+      "summary": "The strict text gate stopped promotion, but an installation/harness audit has not established a model defect.",
+      "observation": "The self-contained Q8 MTP head passed full SHA256 verification. With the original Q6 target and Q8 PLE, the fresh speculation-off control completed 12 requests: three each code, reasoning, prose and repetitive editing, 256 outputs each; one user,16K context,b256/ub128,layout A,greedy and no prompt cache. MTP n_max1 loaded and ran, but failed exact greedy agreement on code at18:50:39 UTC. Its activation log reported device-side hidden-state rows and120 accepted of135 drafted tokens on that rejected request. Draft lengths2/4 were skipped. The separate ngram-simple n_max4 control failed agreement on reasoning at18:52:05. Baseline restoration/smoke passed18:52:40; the local report records healthy baseline and exited supervisor at18:54:06.",
+      "limitation": "Acceptance proves drafting activity, not correctness or a speedup. Neither speculative arm passed screening; no two-user qualification or speculative deployment ran. The mismatch cause is undetermined, including possible harness/comparison-method error. Exact text agreement across changed verification batch shapes is not a standalone test of a model defect or semantic corruption. Rejected long-form responses were not preserved, limiting first-divergence analysis. Partial n-gram timings are excluded from overall ranking. The verified38-file backup covers only this speculative segment, not earlier raw GPU traces.",
+      "next": "The later96-output token diagnostic confirms real divergence and blocks further screening. Use its first-difference positions for probability/verification-path review; do not overwrite these historical256-output observations or rank rejected-arm speed.",
+      "source": "speculative-screen",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "trace-clock-review",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Historical gate rejection / clock later reviewed",
+      "title": "Recorded Events Still Need A Verified Clock",
+      "summary": "The original validator rejected the capture; later read-only review found epoch-microsecond times and recovered device events.",
+      "observation": "The November 19 continuation reports that the corrected controlled probe passed at 17:41:25 UTC, including active events, paused-window exclusion, and graceful-exit finalization. An initial full-model API/device attempt produced a truncated 59,173,490-byte JSON file and did not finalize cleanly. A separately staged device-only attempt used eight output tokens for its first single-user window, passed model correctness and four-device event checks, exited cleanly, and produced parseable JSON. The 17:51:27 UTC status record nevertheless reports failed timestamp/window validation and a stopped queue requiring attention. Baseline restoration passed at 17:49:54 UTC with the arithmetic smoke answer 42.",
+      "limitation": "The historical timestamp/window rejection remains unresolved, not a proven gate-only error. The November 20 audit finds a ~15.4-second first-event offset from recorded resume; epoch-like times alone do not establish alignment. Separate raw-trace local backup is verified, not complete calibrated coverage. No8K/two-user GPU capture is established. Recorded restoration is not current live health. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap.",
+      "next": "Use the November 20 trace-clock-audit correction; validate clock mapping and collection semantics before further interpretation.",
+      "source": "trace-status",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "mtp-feasibility",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Historical preflight / outcome below",
+      "title": "A Drafting Candidate, Not A Decode Gain Yet",
+      "summary": "The self-contained head passed download/hash checks and reached MTP inference; subsequent screening rejected the speculative arms.",
+      "observation": "Later November 19 source-session inspection confirms a qwen4exp multi-token-prediction (MTP) graph, draft-mtp driver, and recurrent-state rollback handling in the pinned runtime, but does not find the cross-model tensor-borrowing support needed by the smaller shared head. The selected first candidate is therefore the self-contained Q8_0 head, 4,137,429,120 bytes (about 4.14 GB decimal), without a loader patch. The session reports restored authenticated access, healthy-baseline/ownership preflight, and 66 local checks passed while final head-metadata/hash verification and bounded test preparation were underway. This preflight has been superseded by the local speculative-screen outcome: head identity was verified and MTP loaded and ran.",
+      "limitation": "Preflight and source support did not establish correctness or a speedup. The subsequent MTP and n-gram arms failed exact greedy output agreement, so neither is qualified or deployed. The smaller shared-head loader limitation remains distinct from this tested self-contained head.",
+      "next": "Use the recorded rejection and activation evidence, not this historical plan, to guide a separately authorized divergence investigation.",
+      "source": "speculative-screen",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "backend-results",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Uninstrumented backend screens",
+      "title": "Backend Builds Now Have Measured Results",
+      "summary": "The API-only build cleared packaging. Vulkan and oneDNN-enabled Q6 now have bounded request screens.",
+      "observation": "In the local export observed at 17:32:37 UTC, medians of three 1,955-input / 512-output requests were: Vulkan UD-Q6_K_XL 596.511 prefill tokens/s, 6.186 decode tokens/s, 3.346s time to first token; Vulkan UD-Q4_K_XL with the same Q8 lookup 634.673 / 7.267 / 3.162s; oneDNN-enabled SYCL Q6 739.047 / 35.719 / 2.720s. Each variant completed six requests total, split across 425- and 1,955-token prompts. The screens used one user, 8K context, b/ub 1,024 and balanced layer placement with flash attention.",
+      "limitation": "These are uninstrumented screening medians, not final two-user qualification or a universal SYCL/Vulkan ranking. No Vulkan advantage or demonstrated oneDNN gain is established. An enabled oneDNN build does not prove every operation uses oneDNN. Later session reports say oneDNN Q4 completed, but no reviewed numeric summary is added here.",
+      "next": "Retain per-request evidence, compare the same model and workload in clean matched finalist tests, and apply per-user latency/stall gates before any deployment.",
+      "source": "backend-screens",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "qualification-result",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Both optimized controls rejected",
+      "title": "More Throughput Failed The Experience Gate",
+      "summary": "The corrected attribution test reached a decision: higher aggregate throughput did not excuse worse stalls.",
+      "observation": "The completed review observed at 17:09:09 UTC covers two users at 16K context per slot: 36 requests per variant across 12 required groups with three observations each. Aggregate workload rates were 16.179 tokens/s for the original reference, 22.385 for balanced Q6, and 22.354 for natural-lazy Engram. Both optimized controls failed the strict no-worse stall gate despite passing their accounting, quality, and final-slot self-checks. A representative balanced maximum content-chunk gap was 1.564s versus 0.751s; natural-lazy reached 1.533s versus 0.763s in another group.",
+      "limitation": "Content chunks are not guaranteed individual tokens. Three observations per group are small-sample tail estimates. Aggregate throughput is descriptive, not a per-user guarantee. No optimized winner was deployed from these results; the original reference remains the fallback.",
+      "next": "Use the rejected cases to isolate scheduling/interference costs. Qualify any later candidate against the same complete user/slot/role groups without weakening the acceptance gates.",
+      "source": "corrected-validation",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "trace-flush-gate",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Historical flush failure / probe corrected",
+      "title": "A Trace File After Exit Isn’t The Required Proof",
+      "summary": "The initial idle-flush assumption failed; a graceful-exit correction later passed the controlled probe.",
+      "observation": "After the backend screens, the source session reports that all named kernel phases in the controlled tiny probe completed correctly, but the trace did not flush while the probe was idle. It appeared only after process exit. The gate stopped before full-model capture and baseline was reported untouched.",
+      "limitation": "This historical failure is now timestamped in the updated continuation at 17:35:53 UTC and superseded by the controlled-probe pass at 17:41:25. Neither event alone is full-model trace proof. The later device-only full-model attempt still failed timestamp/window correlation.",
+      "next": "Retain the initial failure and corrected probe evidence. Investigate the separate full-model clock/window validation failure without relaxing the acceptance boundary.",
+      "source": "continuation-v4",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "api-trace-preparation",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Packaging resolved / correlation pending",
+      "title": "Remove The Packaging Block. Prove The Trace Window.",
+      "summary": "The guarded handoff and backend builds passed; controlled tracing found a separate flush limitation.",
+      "observation": "The November 19 continuation first passed 60 local checks, 36 affected Linux checks, and two headless-preparation checks. The guarded version-4 handoff then passed around 17:04 UTC. Disabling both upstream UI provisioning paths resolved packaging: Vulkan built/enumerated devices at 17:05:08 and oneDNN-enabled SYCL at 17:28:48. Existing loader and source-supported API-only paths were used; no driver replacement was needed.",
+      "limitation": "Build success is not service qualification. Bounded backend request screens are reported separately. The corrected controlled probe passed, but a later parseable full-model device-only trace failed timestamp/window validation. No qualified full-model timeline or optimized deployment is established. The November 20 saved-control audit supersedes the earlier gate-only explanation: clock/window alignment remains unresolved. Later bounded clock experiments identify the tested BOOTTIME/RAW epoch-conversion defect and validate native RAW markers; see clock-validation. They do not retroactively requalify historical traces or certify precise cross-device overlap.",
+      "next": "Verify the diagnosed harness gate and preserved trace parser, then complete separately authorized long-context/two-user coverage and qualification. Clock-domain doubt is superseded, not a reason to alter drivers.",
+      "source": "continuation-v4",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "execution-capture",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Diagnostic capture verified",
+      "title": "From Hypothesis To Recorded Execution",
+      "summary": "The investigation now has execution metadata and checked routing summaries, not just throughput clues.",
+      "observation": "The diagnostic stage finished at 15:46:30 UTC. The 16:17 UTC check-in confirms actual batch and prefill/decode phase labels, MoE dispatch branches, copy evidence, and host waits. A separate routing pass produced 15,462 summaries, passed count conservation, and reported zero malformed JSON lines. Baseline restoration passed afterward.",
+      "limitation": "These are diagnostic metadata, not GPU kernel durations, XMX occupancy, or uninstrumented speed results. Reading routing tensors can affect synchronization. The page animations remain conceptual and are not playback of these records.",
+      "next": "Correlate request phases, dispatch choices, and copy/host waits, then validate a bounded full-model GPU timeline separately from clean performance runs.",
+      "source": "checkin-v3",
+      "mechanism": "routing"
+    },
+    {
+      "id": "slot-attribution",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Live probe passed",
+      "title": "Prove Which Slot Served The Request",
+      "summary": "The live test verified authoritative final-response identities before qualification resumed.",
+      "observation": "On November 19 at 14:37:55–56 UTC, requested slot 0 returned 0 and requested slot 1 returned 1; both arithmetic answers were correct. Baseline restoration and smoke passed at 14:38:31 UTC. The parser now uses the final response rather than an uninitialized partial-stream slot placeholder.",
+      "limitation": "A successful identity probe is not a service performance pass. The later completed qualification review rejected both optimized controls on per-group stalls despite successful final-slot accounting; no optimized winner was deployed.",
+      "next": "Retain authoritative final-slot checks and both mapping/role permutations in future qualification. Do not replace per-group acceptance with pooled or aggregate speed.",
+      "source": "validation-v3",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "gpu-event-probe",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Tiny GPU probe verified",
+      "title": "Kernel Events Are A First Step, Not The Full Trace",
+      "summary": "A small correctness-checked probe verified that the profiler can see the B70 devices.",
+      "observation": "The 16:17 UTC check-in records four named positive-duration GPU kernel events with B70 device metadata from a tiny unitrace probe, with correctness reviewed on all four devices. The profiler tool was installed privately.",
+      "limitation": "This is a tiny probe, not a full-model GPU timeline. It does not establish which model kernels dominate, a backend speed advantage, or a driver fault. Host waits and dispatch labels are not GPU durations.",
+      "next": "The later graceful-exit controlled probe passed, but full-model events still failed request-window validation. Review that distinct clock-correlation issue; do not reinterpret tiny-probe success as a qualified full-model timeline.",
+      "source": "checkin-v3",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "fairness",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Corrected controls rejected",
+      "title": "A Faster Average Isn’t Enough",
+      "summary": "The pooled-result hold led to explicit slot checks and a corrected two-user validation campaign.",
+      "observation": "The original pooled-result deployment hold led to verified final-slot attribution. The completed review observed at 17:09:09 UTC then tested 36 requests per variant across 12 user/slot/role groups at 16K context per slot. Balanced Q6 and natural-lazy Engram both passed accounting checks but failed no-worse stall comparisons, despite higher aggregate workload throughput.",
+      "limitation": "Pooled median decode does not establish that each user retains the required performance. No optimized winner was deployed: the completed corrected review rejected both optimized controls on no-worse stall gates. Small per-group samples do not characterize a universal tail distribution.",
+      "next": "Investigate the recorded stall failures and repeat any revised candidate with explicit user/slot/role groups. Keep the original reference as fallback until all gates pass.",
+      "source": "corrected-validation",
+      "mechanism": "fairness"
+    },
+    {
+      "id": "precision",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Measured screen",
+      "title": "Lower Precision, A Controlled Comparison",
+      "summary": "Q4 improved prefill in a small matched test while the Q8 lookup table stayed fixed.",
+      "observation": "At 1,955 input and 512 output tokens, three-request medians were 817.766 prefill tokens/s for UD-Q4_K_XL and 729.573 for UD-Q6_K_XL. Decode was 36.866 and 35.701 tokens/s respectively.",
+      "limitation": "These names describe mixed-precision GGUF storage, not verified native INT4 execution. Bounded deterministic checks are not general quality equivalence.",
+      "next": "Broaden quality evaluation and repeat the comparison under the same one-/two-user long-context workload before promotion.",
+      "source": "measurements",
+      "mechanism": "precision"
+    },
+    {
+      "id": "context",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Capability screen",
+      "title": "Long Context Works. Service Fit Still Matters.",
+      "summary": "A one-user recall milestone does not automatically translate into a two-user service.",
+      "observation": "A one-user recall screen at a 262,144-token context setting passed with 260,516 actual input tokens. The later local export also records a separate 260,498-input / 1,024-output request at 12.324 decode tokens/s. The two-user configuration at that context hit the GPU-memory-headroom safety limit.",
+      "limitation": "Single-request capability screens are not service qualification or broad quality proof. Some earlier long-context timings overlapped diagnostic compilation and require clean repeats; do not rank configurations from this series.",
+      "next": "Repeat realistic long-document workloads, measure per-user latency and interference, and qualify the context that the intended service can actually sustain.",
+      "source": "context-export",
+      "mechanism": "context"
+    },
+    {
+      "id": "engram",
+      "date": "2026-11-19",
+      "category": "investigating",
+      "status": "Residency unresolved",
+      "title": "Mapped To SSD Isn’t The Same As Reading SSD",
+      "summary": "Linux page caching makes Engram placement a measurement question, not a launch-flag assumption.",
+      "observation": "Natural lazy loading, manually warmed lazy loading, and eager CPU placement produced similar short-request screens. Manual warming reached only 18.15% whole-file page-cache residency.",
+      "limitation": "We have not established a fully DRAM-resident-versus-cold-SSD comparison. A memory mapping alone does not prove where each lookup is served.",
+      "next": "Correlate file residency, faults, process memory, and disk reads with request phases while holding the same Q8 table fixed.",
+      "source": "methodology",
+      "mechanism": "engram"
+    },
+    {
+      "id": "kernels",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Measured control",
+      "title": "Prefill And Decode Need Different Explanations",
+      "summary": "Disabling selected gather paths affected prompt processing much more than generation.",
+      "observation": "At 1,955 input and 512 output tokens, three-request medians fell from 714.844 to 478.586 prefill tokens/s with XMX gather/dequant-GEMM paths disabled. Decode remained near 35.7 tokens/s.",
+      "limitation": "This control does not disable every XMX operation or measure XMX occupancy. It is not proof of bandwidth saturation or a driver defect.",
+      "next": "Use the newly captured execution/dispatch and routing records to test the mechanism. Full-model GPU kernel durations still need a validated capture; keep instrumented results out of performance ranking.",
+      "source": "methodology",
+      "mechanism": "kernels"
+    },
+    {
+      "id": "backends",
+      "date": "2026-11-19",
+      "category": "measured",
+      "status": "Packaging resolved / screens measured",
+      "title": "Compare Backends Before Drawing Conclusions",
+      "summary": "API-only builds cleared the web-UI blocker, and bounded backend requests are now measured.",
+      "observation": "The 16:17 UTC check-in still showed a web-UI packaging blocker. The later API-only build resolved it: Vulkan built at 17:05:08 UTC and completed its request screens and restoration at 17:27:42; oneDNN-enabled SYCL built at 17:28:48, with Q6 request medians included in the 17:32:37 local export. Separate source-session messages report its full-model correctness pass.",
+      "limitation": "Backend screens are now available, but do not establish a final service winner. No measured Vulkan advantage, native-INT4 proof, multi-token-prediction improvement, or driver repair is established. The earlier packaging failure was not a GPU diagnosis.",
+      "next": "Use the newly observed screens to choose clean matched finalist tests. Require full per-user/role qualification before promotion; do not rank instrumented operation diagnostics as speed runs.",
+      "source": "backend-screens",
+      "mechanism": "kernels"
+    }
+  ]
+}
