@@ -255,6 +255,24 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML ids');
 assert.equal([...html.matchAll(/class="source-entry" id="source-/g)].length, data.sources.length);
 assert.ok(ids.includes('journal-more'));
+assert.ok(html.indexOf('id="approach"') < html.indexOf('id="latest"'), 'Research question must precede findings');
+assert.ok(html.indexOf('id="experiments"') < html.indexOf('id="platform"'), 'Hardware detail stays after explorer');
+assert.match(html, /Not Just “Does It Fit\?”/);
+assert.match(html, /a piece of text, not necessarily a whole word/);
+assert.match(html, /means processing the question and its context/);
+assert.match(html, /means producing the answer/);
+assert.match(html, /total output produced over time/);
+assert.equal([...html.matchAll(/Test settings and numbers/g)].length, 3);
+assert.equal([...html.matchAll(/Technical next step/g)].length, 3);
+assert.match(html, /Q6 \/ Q8 PLE/);
+assert.match(html, /Balanced b256\/ub128/);
+assert.match(html, /1\.7% worse/);
+assert.match(html, /2\.008×/);
+assert.match(html, /2\.160× reference/);
+assert.equal(comparisonView(data.comparison, 'prefill').title, 'Processing the question');
+assert.equal(comparisonView(data.comparison, 'decode').title, 'Producing the answer');
+assert.equal(comparisonView(data.comparison, 'ttft').title, 'Wait for the first output');
+
 assert.match(js, /for \(let details = target.closest\('details'\)/);
 
 for (const source of data.sources) assert.ok(ids.includes(`source-${source.id}`), `Missing static source ${source.id}`);
@@ -270,7 +288,7 @@ for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
 for (const match of css.matchAll(/url\('([^']+)'\)/g)) assert.ok(existsSync(resolve(root, match[1])), `Missing CSS asset ${match[1]}`);
 assert.match(css, /prefers-reduced-motion/);
 assert.match(css, /\.evidence-content\{[^}]*overflow-wrap:anywhere/);
-assert.match(html, /styles\.css\?v=10/);
+assert.match(html, /styles\.css\?v=11/);
 assert.match(html, /noindex, nofollow/);
 assert.match(html, /loaning the gear/);
 assert.match(html, /Expedient \+ Intel/);
@@ -329,6 +347,6 @@ assert.doesNotMatch(html + js + experiments + JSON.stringify(data), /restricted-
 assert.equal(chapters.find(chapter => chapter.id === 'layout').source, 'clock-validation');
 assert.equal(chapters.find(chapter => chapter.id === 'kernels').source, 'confirmation-checkin');
 assert.match(html, /aria-label="Explore the research"/);
-assert.match(html, /app\.js\?v=23/);
+assert.match(html, /app\.js\?v=24/);
 assert.match(js, /experiments\.js\?v=22/);
 console.log('PASS: measurement provenance, comparison math, input rejection, journal/scene links, seven chapters/28 steps, playback eligibility, safe assets/anchors, and privacy guard.');

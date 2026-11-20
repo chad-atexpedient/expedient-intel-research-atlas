@@ -1,9 +1,9 @@
 import { chapters, mountExperiments } from './experiments.js?v=22';
 
 const metrics = {
-  prefill: { title: 'Prompt processing', direction: 'Higher is better', unit: 'tok/s', description: 'prefill throughput' },
-  decode: { title: 'Token generation', direction: 'Higher is better', unit: 'tok/s', description: 'decode throughput' },
-  ttft: { title: 'Time to first token', direction: 'Lower is better', unit: 's', description: 'time to first token' }
+  prefill: { title: 'Processing the question', direction: 'Higher is better', unit: 'tok/s', description: 'input-processing rate' },
+  decode: { title: 'Producing the answer', direction: 'Higher is better', unit: 'tok/s', description: 'text-generation rate' },
+  ttft: { title: 'Wait for the first output', direction: 'Lower is better', unit: 's', description: 'wait for the first output' }
 };
 
 export function validateResearch(data) {
