@@ -7,6 +7,7 @@ Public availability of this repository is not a grant of trademark or stock-imag
 - **Infrastructure photograph:** supplied brand-approved stock photography. It is illustrative and is not a photograph of the loaned system. No standalone redistribution or reuse license is granted here.
 - **Inter:** The Inter Project Authors. SIL Open Font License 1.1; see `assets/fonts/LICENSE-inter.txt`.
 - **JetBrains Mono:** The JetBrains Mono Project Authors. SIL Open Font License 1.1; see `assets/fonts/LICENSE-jetbrains-mono.txt`.
+- **README cover:** original, static four-device illustration authored for this atlas, using the existing logo geometry. It is conceptual—not a photograph, physical wiring diagram, recorded trace, or performance comparison.
 - **Conceptual SVG diagrams and site implementation:** authored for this research atlas. Visual storytelling was inspired by https://huggingface.co/spaces/huggingface/moe-blogpost, not copied source, assets, topology, or performance claims.
 - **21st.dev:** timeline catalog metadata informed the editorial browsing direction. No component source or runtime dependencies were copied.
 
